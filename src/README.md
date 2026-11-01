@@ -1,6 +1,6 @@
 # Application source
 
-The active prototype has not been imported. These feature folders are placeholders; no runtime or dependency is implied. Resolve D1 in [decisions](../docs/decisions.md) before adding entry points or install commands.
+The active Pokédex frontend prototype has not been imported. These feature folders are placeholders; resolve its D1 choices in [decisions](../docs/decisions.md) before adding frontend entry points or dependencies. The runnable account API is separate in [api/](../api/README.md).
 
 | Folder | Intended responsibility |
 | --- | --- |

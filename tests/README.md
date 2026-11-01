@@ -1,6 +1,6 @@
 # Verification plan
 
-No test runner or automated checks are configured. Select tools after the prototype/toolchain audit (D1), then document real commands in the root README. This folder does not indicate passing application tests.
+This folder plans verification for the Pokédex frontend, whose source and test runner are not yet imported. Select frontend tools after its D1 audit. The separate authentication API has runnable HTTP/configuration tests in [api/test/](../api/test/); run `npm test` from `api/`.
 
 Prioritize checks that exercise behavior and failure paths:
 

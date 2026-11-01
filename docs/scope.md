@@ -1,11 +1,12 @@
 # Project scope
 
-This records the established project context, not a source-code audit. Features described as present belong to the active prototype outside this repository. No application behavior is implemented by this starter.
+This records the established project context, not a source-code audit of the active prototype. The Pokédex frontend remains outside this repository. A separate, runnable [authentication API](../api/README.md) now provides account registration, login/logout, protected identity, password changes, and server-side sessions; frontend integration remains pending.
 
 ## Feature boundaries
 
 | Area | Established prototype behavior | Work to carry into this repository |
 | --- | --- | --- |
+| Account authentication | New API implemented in this repository; not part of the imported prototype | Connect frontend forms and future account-owned trainer/tracker data; decide email verification/recovery delivery |
 | Device variants | Dual-screen device with D-pad; Game Boy-like device with rotary knob | Import both models and document each variant's supported controls |
 | Device interactions | Rotate, zoom, hover, open/close lid where applicable, power on/off, open/close rear cover, remove battery | Preserve interactions; specify state transitions and input handling |
 | Entries | 2D artwork and 3D display; Pokémon types and base stat totals (BST) | Define catalog/form identifiers and keep device selection aligned with the website overview |
@@ -40,4 +41,4 @@ Extra Pokémon-model interactions are deferred. They should not become a depende
 
 ## Not decided by this scaffold
 
-The framework, renderer, state library, catalog source, storage mechanism, accounts, hosting, AI provider, asset delivery, and license remain open. The folder structure is an organizational proposal, not a choice of any of these technologies.
+The frontend framework/renderer/state library, catalog source, trainer/tracker storage, hosting, AI provider, asset delivery, and license remain open. Account authentication uses Node.js, Express, Better Auth, and local SQLite (D10); that choice does not select the frontend stack or implement trainer/tracker cloud saves.

@@ -12,6 +12,12 @@ coverage/
 .cache/
 *.log
 
+# Authentication state and database backups are private runtime data.
+api/var/
+*.sqlite
+*.sqlite-*
+*.sqlite.*
+
 # OS metadata
 .DS_Store
 Thumbs.db

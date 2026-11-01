@@ -2,7 +2,7 @@
 
 A Pokédex website built around a real-time, interactive 3D device, Pokémon entries, and collection progress. Trainer profiles, Rotomaton, and device customization make it personal.
 
-**Repository status:** starter structure and planning only. An active prototype already exists, but its application source and assets have not been imported here. The folders below are placeholders, not working features. No framework, dependency versions, build commands, or deployment target have been selected for this repository.
+**Repository status:** a working email/password authentication API is available in [api/](api/README.md). The active Pokédex frontend prototype and its assets have not been imported; its feature folders remain placeholders. The API stack is selected, while frontend tooling and deployment remain open.
 
 ## Established scope
 
@@ -20,21 +20,30 @@ See [project scope](docs/scope.md) for prototype status and boundaries.
 
 | Path | Purpose |
 | --- | --- |
+| `api/` | Node.js/Express/Better Auth login API, SQLite persistence, migrations, and HTTP tests |
 | `src/features/` | Device, entries/tracker, trainers, Rotomaton, customization, and companions |
 | `src/data/` | Future Pokémon catalog, forms, statistics, and asset manifests |
 | `src/shared/` | Shared state and utilities once the application is imported |
 | `public/assets/` | Asset intake notes; no Pokémon artwork or models are included |
 | `docs/` | Scope, open decisions, performance investigation, and issue index |
-| `tests/` | Planned regression coverage; no test runner is configured |
+| `tests/` | Planned Pokédex frontend regression coverage; API tests live in `api/test/` |
 | `.github/` | Feature, bug, and pull request templates |
 
 ## Start here
 
-1. Work through the [initial issue list](docs/backlog.md), starting with the foundation, data/assets, and performance issues.
-2. Resolve the relevant **OPEN** items in the [decision register](docs/decisions.md) before implementation. Record the outcome and rationale there.
-3. Import the active prototype after confirming its stack and asset inventory. Document its real install, development, build, and test commands in this README.
+Run the API with Node.js 24.15+ (24.x):
 
-There is no runnable application in this commit. Do not infer an npm command or a working backend from the folder names.
+```sh
+cd api
+npm ci
+npm run setup
+npm run db:migrate
+npm run dev
+```
+
+The default API origin is `http://localhost:3001`; `GET /api/health` checks it. Run `npm test` inside `api/`. See the [API guide](api/README.md) for endpoints, cookie-based frontend integration, configuration, and current limits. Email verification/recovery delivery and frontend login forms are still pending.
+
+For the Pokédex frontend, start with the [issue list](docs/backlog.md), resolve the relevant [OPEN decisions](docs/decisions.md), and import the existing prototype after inspecting its actual stack. The API can be developed independently of that import.
 
 ## Assets and licensing
 
